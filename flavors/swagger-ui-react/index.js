@@ -11,6 +11,7 @@ export default class SwaggerUI extends React.Component {
   componentDidMount() {
     const ui = swaggerUIConstructor({
       plugins: this.props.plugins,
+      layout: this.props.layout,
       spec: this.props.spec,
       url: this.props.url,
       defaultModelsExpandDepth: this.props.defaultModelsExpandDepth,
@@ -92,6 +93,7 @@ SwaggerUI.propTypes = {
     PropTypes.oneOf(['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'])
     ),
   plugins: PropTypes.arrayOf(PropTypes.object),
+  layout: PropTypes.string,
   displayOperationId: PropTypes.bool,
   showMutatedRequest: PropTypes.bool,
   defaultModelExpandDepth: PropTypes.number,
