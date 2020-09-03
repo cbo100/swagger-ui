@@ -14,6 +14,7 @@ export default class SwaggerUI extends React.Component {
       layout: this.props.layout,
       spec: this.props.spec,
       url: this.props.url,
+      syntaxHighlight: this.props.syntaxHighlight,
       defaultModelsExpandDepth: this.props.defaultModelsExpandDepth,
       presets: [presets.apis,...this.props.presets],
       requestInterceptor: this.requestInterceptor,
@@ -80,10 +81,7 @@ export default class SwaggerUI extends React.Component {
 }
 
 SwaggerUI.propTypes = {
-  spec: PropTypes.oneOf([
-    PropTypes.string,
-    PropTypes.object,
-  ]),
+  spec: PropTypes.object,
   url: PropTypes.string,
   requestInterceptor: PropTypes.func,
   responseInterceptor: PropTypes.func,
@@ -92,10 +90,11 @@ SwaggerUI.propTypes = {
   supportedSubmitMethods: PropTypes.arrayOf(
     PropTypes.oneOf(['get', 'put', 'post', 'delete', 'options', 'head', 'patch', 'trace'])
     ),
-  plugins: PropTypes.arrayOf(PropTypes.object),
+  plugins: PropTypes.arrayOf(PropTypes.func),
   layout: PropTypes.string,
   displayOperationId: PropTypes.bool,
   showMutatedRequest: PropTypes.bool,
+  syntaxHighlight: PropTypes.object,
   defaultModelExpandDepth: PropTypes.number,
   presets: PropTypes.arrayOf(PropTypes.func),
 }
