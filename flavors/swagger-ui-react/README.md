@@ -107,6 +107,17 @@ An array of functions that augment and modify Swagger UI's functionality. See Sw
 
 ⚠️ This prop is currently only applied once, on mount. Changes to this prop's value will not be propagated to the underlying Swagger UI instance. A future version of this module will remove this limitation, and the change will not be considered a breaking change.
 
+
+#### `layout`: PropTypes.string,
+
+Set to name of a layout supplied by the plugin system.
+
+#### `syntaxHighlight`: PropTypes.object,
+
+Object configuration of the syntax highlighter:
+
+`{ activated: false }` to disable
+
 ## Limitations
 
 * Not all configuration bindings are available.
